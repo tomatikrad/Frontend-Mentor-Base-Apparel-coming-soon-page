@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon-32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="/main.js" defer></script>
+  </head>
+  <body>
+    <div class="main-content-wrapper">
+      <header class="header">
+        <img src="./images/logo.svg" alt="Base Apparel" />
+      </header>
+
+      <div class="hero-img-m">
+        <img class="img-m" src="./images/hero-mobile.jpg" alt="women" />
+      </div>
+
+      <main>
+        <h1 class="title">We're <span>coming soon</span></h1>
+        <p class="content">
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+        <form class="form" action="#">
+          <div class="input-wrapper">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email Address"
+            />
+            <img class="error-img" src="./images/icon-error.svg" alt="error" />
+            <button type="button" class="btn-submit"></button>
+          </div>
+          <p class="status-msg"></p>
+        </form>
+      </main>
+
+      <footer>
+        <p class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by
+          <a href="https://github.com/tomatikrad" target="_blank">tomatikrad</a
+          >.
+        </p>
+      </footer>
+    </div>
+
+    <div class="hero-img-d">
+      <img class="img-d" src="./images/hero-desktop.jpg" alt="women" />
+    </div>
+  </body>
+</html>

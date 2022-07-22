@@ -1,0 +1,283 @@
+:root {
+  --clr-primary-300: hsl(342 16% 82%);
+  --clr-primary-400: hsl(0 36% 70%);
+  --clr-primary-500: hsl(0 93% 68%);
+  --clr-neutral-400: hsl(0 6% 24%);
+
+  --gradien-100: hsl(0 0% 100%), hsl(0 100% 98%);
+  --gradien-200: hsl(0 80% 86%), hsl(0 74% 74%);
+  --gradien-300: hsl(0 85% 92%), hsl(0 77% 88%);
+
+  --footer-txt-clr: var(--clr-neutral-400);
+}
+
+@font-face {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: local(""),
+    url("./fonts/josefin-sans-v25-latin-300.woff2") format("woff2"),
+    url("./fonts/josefin-sans-v25-latin-300.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("./fonts/josefin-sans-v25-latin-regular.woff2") format("woff2"),
+    url("./fonts/josefin-sans-v25-latin-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""),
+    url("./fonts/josefin-sans-v25-latin-600.woff2") format("woff2"),
+    url("./fonts/josefin-sans-v25-latin-600.woff") format("woff");
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  color: var(--clr-primary-400);
+  background-image: linear-gradient(var(--gradien-100));
+  min-height: 100vh;
+}
+
+.main-content-wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr 20px;
+}
+
+.header {
+  padding: 2em;
+}
+.header img {
+  height: 21px;
+}
+.img-m {
+  margin: 0 auto;
+}
+
+.img-d {
+  display: none;
+}
+
+main {
+  margin-top: 3em;
+  margin-bottom: 2em;
+  padding: 0 1.8rem;
+  align-self: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  line-height: 1.1;
+  width: min-content;
+  margin: 0 auto 0.4em;
+}
+.title span {
+  font-weight: 600;
+  color: var(--clr-neutral-400);
+}
+
+.content {
+  font-size: 0.9375rem;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+input[type="email"] {
+  color: var(--clr-neutral-400);
+  background-color: transparent;
+  border: 1px solid var(--clr-primary-300);
+  border-radius: 100vmax;
+  width: 100%;
+  height: 52px;
+  padding: 0.8rem 1.5rem;
+  outline: none;
+}
+input[type="email"]::placeholder {
+  color: var(--clr-primary-400);
+}
+input[type="email"]:focus-visible {
+  border: 1px solid var(--clr-primary-400);
+}
+input[type="email"].invalid {
+  border: 1px solid var(--clr-primary-500);
+}
+
+.btn-submit {
+  cursor: pointer;
+  height: 52px;
+  width: 65px;
+  background-image: url(./images/icon-arrow.svg),
+    linear-gradient(to right, var(--gradien-200));
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 100vmax;
+  box-shadow: 0 0.5rem 1rem hsl(0 48% 90%);
+
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.btn-submit:hover {
+  background-image: url(./images/icon-arrow.svg),
+    linear-gradient(to right, var(--gradien-300));
+}
+
+.error-img {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 75px;
+  transform: translateY(-50%);
+}
+.status-msg {
+  font-size: 0.875rem;
+  color: var(--clr-primary-500);
+  padding-top: 0.5rem;
+  padding-left: 1.5rem;
+  height: 29px;
+}
+
+footer {
+  height: 20px;
+  color: var(--footer-txt-clr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 900px) {
+  body {
+    background: none;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .main-content-wrapper {
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .img-m {
+    display: none;
+  }
+
+  .hero-img-d {
+    max-height: 100vh;
+    max-width: 100%;
+  }
+  .img-d {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .header img {
+    height: 33px;
+  }
+
+  .header,
+  main {
+    margin: 0 auto;
+    max-width: 500px;
+    width: 500px;
+  }
+
+  .title {
+    text-align: left;
+    margin-left: 0;
+    font-size: 4rem;
+    letter-spacing: 1rem;
+  }
+  .content {
+    text-align: left;
+    font-size: 1rem;
+  }
+  .btn-submit {
+    width: 100px;
+  }
+}
